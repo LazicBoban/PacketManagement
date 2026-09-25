@@ -1,4 +1,4 @@
-# Packet Management - Salesforce Project
+# Package Management - Salesforce Project
 
 An end-to-end cloud and mobile-ready logistics solution built on the Salesforce platform. This project addresses real-world delivery management challenges by combining low-code automation, programmatic backend logic, integration with external REST APIs, and a modern reactive user interface.
 

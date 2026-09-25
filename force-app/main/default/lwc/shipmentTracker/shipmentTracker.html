@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Praćenje Paketa Uživo" icon-name="standard:shipment">
+        <div class="slds-p-around_medium">
+            <!-- Prikaz spinnera dok se podaci učitavaju -->
+            <template if:true={isLoading}>
+                <lightning-spinner alt-text="Učitavanje..." size="small"></lightning-spinner>
+            </template>
+
+            <!-- Dugme za osvežavanje statusa -->
+            <div class="slds-m-bottom_medium">
+                <lightning-button label="Osveži status uživo" variant="brand" onclick={handleRefresh}></lightning-button>
+            </div>
+
+            <!-- Prikaz rezultata ako postoje podaci -->
+            <template if:true={location}>
+                <p class="slds-p-vertical_xx-small"><strong>Trenutna Lokacija:</strong> {location}</p>
+                <p class="slds-p-vertical_xx-small"><strong>Procenjeno Vreme Dolaska:</strong> {arrivalTime}</p>
+            </template>
+
+            <!-- Prikaz greške ako nešto krene po zlu -->
+            <template if:true={errorMessage}>
+                <div class="slds-text-color_error slds-m-top_small">
+                    <strong>Problem:</strong> {errorMessage}
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
